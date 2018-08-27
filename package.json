@@ -1,0 +1,38 @@
+{
+  "name": "with-typescript",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npm run test-all",
+    "test-all": "jest --watchAll",
+    "test-uncommited": "jest -o",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "generate": "idsck"
+  },
+  "dependencies": {
+    "next": "6.1.1",
+    "react": "16.4.2",
+    "react-dom": "16.4.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.0.0",
+    "@types/next": "^2.4.8",
+    "@types/react": "^16.0.41",
+    "@types/react-dom": "^16.0.4",
+    "@zeit/next-typescript": "1.1.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "23.0.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "ideasick-frontend-cli": "^1.0.5",
+    "jest": "^23.1.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.2.0",
+    "tslint": "^5.11.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^2.9.2"
+  },
+  "license": "ISC"
+}

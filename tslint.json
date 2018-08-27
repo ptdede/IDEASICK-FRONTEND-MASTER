@@ -1,0 +1,16 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended",
+        "tslint-react"
+    ],
+    "jsRules": {},
+    "rules": {
+        "jsx-wrap-multiline": false,
+        "member-access": [
+            true,
+            "no-public"
+        ] // Or false. Read the rule and see what you want.
+    },
+    "rulesDirectory": []
+}
