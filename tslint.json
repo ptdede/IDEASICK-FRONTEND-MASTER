@@ -7,10 +7,23 @@
     "jsRules": {},
     "rules": {
         "jsx-wrap-multiline": false,
-        "member-access": [
-            true,
-            "no-public"
-        ] // Or false. Read the rule and see what you want.
+        "member-access": [ true, "no-public" ],
+        "no-console": false,
+        "max-line-length": false,
+        "object-literal-sort-keys": false,
+        "jsx-no-lambda": false,
+        "no-shadowed-variable": [
+            false,
+            {
+                "class": true,
+                "enum": true,
+                "function": true,
+                "interface": false,
+                "namespace": true,
+                "typeAlias": false,
+                "typeParameter": false
+            }
+        ]
     },
     "rulesDirectory": []
 }
