@@ -12,6 +12,8 @@
         "max-line-length": false,
         "object-literal-sort-keys": false,
         "jsx-no-lambda": false,
+        "no-string-literal": false,
+        "indent": [ false, "spaces", 2 ],
         "no-shadowed-variable": [
             false,
             {

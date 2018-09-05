@@ -7,10 +7,14 @@
 
 import React from "react";
 
-class ComponentUi extends React.Component {
-  render() {
-    return null;
-  }
-}
+import StyledComponentUi from "./StyledComponentUi";
+
+const ComponentUi = (props) => {
+  return (
+    <StyledComponentUi {...props}>
+      {props.children}
+    </StyledComponentUi>
+  );
+};
 
 export default ComponentUi;

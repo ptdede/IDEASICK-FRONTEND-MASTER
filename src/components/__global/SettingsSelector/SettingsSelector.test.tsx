@@ -1,5 +1,5 @@
 describe("SettingsSelector", () => {
-    it("render SettingsSelector correctly", () => {
-        expect(1 + 1).toEqual(2);
+    it("SettingsSelector test is provided", () => {
+        expect(true).toEqual(false);
     });
 });

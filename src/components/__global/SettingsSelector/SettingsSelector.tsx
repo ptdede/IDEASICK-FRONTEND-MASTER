@@ -7,9 +7,28 @@
 
 import React from "react";
 
-class SettingsSelector extends React.Component<any> {
+import { ISettingsSelector } from "./interfaces";
+import StyledSettingsSelector from "./StyledSettingsSelector";
+
+class SettingsSelector extends React.Component<ISettingsSelector> {
+
   render() {
+    if (this.props.iframe && !this.props.disabled) {
+      return (
+        <StyledSettingsSelector
+          {...this.props}
+          onClick={this.handleChange}
+        >
+          <span>{this.props.children}</span>
+        </StyledSettingsSelector>
+      );
+    }
+
     return null;
+  }
+
+  handleChange = (e) => {
+    if (this.props.onChangeSettingsTriggered) { this.props.onChangeSettingsTriggered(); }
   }
 }
 

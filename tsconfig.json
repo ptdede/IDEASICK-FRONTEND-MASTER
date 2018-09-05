@@ -13,14 +13,15 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "skipLibCheck": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@idsck/assets/*": ["src/assets/*"],
-      "@idsck/components/*": ["src/components/*"],
-      "@idsck/containers/*": ["src/containers/*"],
-      "@idsck/factories/*": ["src/factories/*"],
-      "@idsck/helpers/*": ["src/helpers/*"],
-      "@idsck/hoc/*": ["src/hoc/*"],
+      "@idsck/assets/*": ["./src/assets/*"],
+      "@idsck/components/*": ["./src/components/*"],
+      "@idsck/containers/*": ["./src/containers/*"],
+      "@idsck/factories/*": ["./src/factories/*"],
+      "@idsck/helpers/*": ["./src/helpers/*"],
+      "@idsck/hoc/*": ["./src/hoc/*"],
+      "@idsck/global/*": ["./src/*"],
     },
     "typeRoots": [
       "./node_modules/@types"

@@ -1,6 +1,7 @@
 import { PageTransition } from "next-page-transitions";
 import App, { Container } from "next/app";
 import React from "react";
+import { ParallaxProvider } from "react-scroll-parallax";
 import { injectGlobal } from "styled-components";
 import generateStyledJsx from "../src/assets/styles/page-transition";
 
@@ -36,7 +37,10 @@ export default class MyApp extends App {
                     loadingTimeout={{ enter: this.config.TIMEOUT, exit: 0 }}
                     loadingClassNames="loading-indicator"
                 >
-                    <Component {...pageProps} />
+
+                    <ParallaxProvider>
+                        <Component {...pageProps} />
+                    </ParallaxProvider>
                 </PageTransition>
             </Container>
         );

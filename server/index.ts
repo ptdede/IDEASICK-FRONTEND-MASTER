@@ -1,10 +1,18 @@
 import * as compression from "compression";
+import * as cors from "cors";
 import * as express from "express";
+import * as LRUCache from "lru-cache";
 import * as next from "next";
+
 import routes from "./routes";
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
+
+const ssrCache = new LRUCache({
+    max: 100,
+    maxAge: 1000 * 60 * 60, // 1hour
+});
 
 app .prepare()
     .then(() => {
@@ -13,30 +21,22 @@ app .prepare()
         // load Gzip compression module
         server.use(compression());
 
-        /**
-         * Disable cache,
-         * don't know how to handle cache if user has been updated the page.
-         * TODO: FIGURE IT OUT LATER!!!
-         */
-        server.use((_, res, next) => {
-            res.header("Cache-Control", "private, no-cache, no-store, must-revalidate");
-            res.header("Expires", "-1");
-            res.header("Pragma", "no-cache");
-            next();
-        });
+        // load cors. allow all connection
+        server.use(cors());
+        server.options("*", cors());
 
         /**
          * Load server routes.
          * passing app instance to be used on other files.
          */
-        server.use(routes(app));
+        server.use(routes(app, ssrCache));
 
         /**
          * TODO: move port to single .env setting page.
          */
-        server.listen(3030, (err) => {
+        server.listen(process.env.PORT, (err) => {
             if (err) { throw err; }
-            console.log("> Ready on http://localhost:3030");
+            console.log(`> Ready on http://localhost:${process.env.PORT}`);
         });
     })
     .catch((ex) => {

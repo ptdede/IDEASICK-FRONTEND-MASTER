@@ -1,6 +1,6 @@
-interface IDataExchange {
-    id: string;
-    index: number;
+export interface IDataExchange {
+    id?: string;
+    index?: number;
     data?: any;
     configs?: any;
     isUsingLoadash?: boolean;
@@ -9,6 +9,11 @@ interface IDataExchange {
     action?: string;
 }
 
-export {
-    IDataExchange,
-};
+export interface IDataActionListener {
+    handleDataChange: (data: IDataExchange) => void;
+    handleTriggerPropChange: (data: IDataExchange) => void;
+    handleTriggerConfigChange: (data: IDataExchange) => void;
+    handleOverrideTemplate: (data: IDataExchange) => void;
+    handleCollectionAction: (data: IDataExchange) => void;
+    handleTriggerRefreshConfig: (data: IDataExchange) => void;
+}

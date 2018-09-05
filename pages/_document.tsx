@@ -15,10 +15,9 @@ export default class MyDocument extends Document {
 
     render() {
         return (
-            <html>
+            <html lang="en">
                 <Head>
                     {this.props.styleTags}
-
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <link rel="apple-touch-icon" sizes="57x57" href="/static/favicon/apple-icon-57x57.png" />
                     <link rel="apple-touch-icon" sizes="60x60" href="/static/favicon/apple-icon-60x60.png" />
@@ -37,7 +36,6 @@ export default class MyDocument extends Document {
                     <meta name="msapplication-TileColor" content="#ffffff" />
                     <meta name="msapplication-TileImage" content="/static/favicon/ms-icon-144x144.png" />
                     <meta name="theme-color" content="#ffffff" />
-
                     <link rel="stylesheet" type="text/css" href="/static/themify-icons.css" />
                     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway:300,400,500,700" rel="stylesheet" />
                     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
